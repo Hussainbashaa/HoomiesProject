@@ -84,9 +84,8 @@ body {
   height: 60px;
   box-sizing: border-box;
   overflow: scroll;
-  scrollbar-width: none;
+  scrollbar-width: auto;
   scrollbar-color: #888 #f4f4f4;
-  scroll-margin-right: 20px;
 }
 .crusine-section button {
   padding: 10px 15px;
@@ -294,6 +293,8 @@ body {
     gap: 10px;
   }
   .crusine-section {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     height: auto;
     overflow-x: visible;
