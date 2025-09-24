@@ -83,9 +83,14 @@ body {
   width: 100%;
   height: 60px;
   box-sizing: border-box;
-  overflow: scroll;
-  scrollbar-width: auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-height: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   scrollbar-color: #888 #f4f4f4;
+  scroll-snap-type: x mandatory; /* Add this */
 }
 .crusine-section button {
   padding: 10px 15px;
@@ -97,9 +102,7 @@ body {
   font-size: 15px;
   font-weight: 600;
   transition: background-color 0.3s;
-}
-.crusine-section button:hover {
-  background-color: #636a6a;
+  scroll-snap-align: start; /* Add this */
 }
 .hero-section {
   display: flex;
@@ -261,11 +264,16 @@ body {
     max-width: none;
   }
   .crusine-section {
+    display: flex;
+    justify-content: flex-start; /* Change to flex-start */
+    align-items: center;
     height: auto;
-    overflow-x: scroll;
+    /* Remove scroll-margin-left and scroll-padding */
+    overflow-x: auto;
     padding: 10px 0;
   }
   .crusine-section button {
+    margin: 5px;
     flex-shrink: 0;
   }
   .hero-section {
@@ -279,95 +287,56 @@ body {
   }
 }
 @media (max-width: 480px) {
+  .Card-Cointainer {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+    padding: 6px;
+  }
   .card {
-    width: 150px;
-    height: 250px;
+    width: 120px;
+    height: 170px;
   }
   .card .card-title {
-    font-size: 15px;
+    font-size: 12px;
+    padding: 6px;
   }
-}
-@media (max-width: 360px) {
-  .nav-options {
-    flex-direction: column;
-    gap: 10px;
+  .hero-section {
+    height: 120px;
   }
-  .crusine-section {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: auto;
-    overflow-x: visible;
+  .hero-text h1 {
+    font-size: 16px;
   }
-  .crusine-section button {
-    margin: 5px 0;
+  .hero-text p {
+    font-size: 10px;
+  }
+  .footer {
+    font-size: 10px;
+    padding: 8px 0;
   }
 }
 @media (max-width: 320px) {
-  .hero-text h1 {
-    font-size: 24px;
+  .Card-Cointainer {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 2px;
   }
-  .hero-text p {
-    font-size: 14px;
-  }
-}
-@media (max-width: 300px) {
   .card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 120px;
-    height: 180px;
+    width: 90vw;
+    height: 120px;
   }
   .card .card-title {
-    font-size: 14px;
+    font-size: 10px;
+    padding: 3px;
   }
-}
-@media (max-width: 240px) {
-  .nav-bar {
-    padding: 5px 10px;
-  }
-  .search-Bar {
-    width: 100%;
-    font-size: 14px;
-  }
-}
-@media (max-width: 200px) {
-  .crusine-section button {
-    padding: 5px 8px;
-    font-size: 12px;
-  }
-}
-@media (max-width: 160px) {
-  .hero-text {
-    padding: 10px;
+  .hero-section {
+    height: 60px;
   }
   .hero-text h1 {
-    font-size: 20px;
+    font-size: 10px;
   }
   .hero-text p {
-    font-size: 12px;
+    font-size: 8px;
   }
 }
-@media (max-width: 120px) {
-  .card {
-    width: 100px;
-    height: 150px;
-  }
-  .card .card-title {
-    font-size: 12px;
-  }
-}
-@media (max-width: 80px) {
-  .nav-bar {
-    flex-direction: column;
-    padding: 2px 5px;
-  }
-  .title-Section {
-    font-size: 20px;
-  }
-  .search-Bar {
-    width: 100%;
-    font-size: 12px;
-    padding: 5px 8px;
-  }
-}
+
+/* ...keep your existing code for nav-bar, search, etc. as needed... */
