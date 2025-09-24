@@ -282,10 +282,10 @@ body {
 @media (max-width: 480px) {
   .card {
     width: 150px;
-    height: 220px;
+    height: 250px;
   }
   .card .card-title {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 360px) {
@@ -310,8 +310,10 @@ body {
     font-size: 14px;
   }
 }
-@media (max-width: 280px) {
+@media (max-width: 300px) {
   .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 120px;
     height: 180px;
   }
